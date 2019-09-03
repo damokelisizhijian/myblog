@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+## 安装webmin
 
-You can use the [editor on GitHub](https://github.com/damokelisizhijian/myblog/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+1. 确认是否有wget
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+   ```
+   wget
+   ```
 
-### Markdown
+   ![1567404038540](C:\Users\Bill\OneDrive\Typero文件\media\1567404038540.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+   如上显示为有wget命令。
 
-```markdown
-Syntax highlighted code block
+   如果缺少wget命令，执行:
 
-# Header 1
-## Header 2
-### Header 3
+   ```shell
+   yum -y install wget
+   ```
 
-- Bulleted
-- List
+2. 下载安装包
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```shell
+shell>	wget https://jaist.dl.sourceforge.net/project/webadmin/webmin/1.930/webmin-1.930-1.noarch.rpm
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+1. 执行安装
 
-### Jekyll Themes
+```shell
+shell>rpm -Uvh ./webmin-1.930-1.noarch.rpm
+```
+![1566812028912](C:\Users\Bill\OneDrive\Typero文件\media\1566812028912.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/damokelisizhijian/myblog/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+出现错误，安装相关的依赖
 
-### Support or Contact
+```shell
+yum -y install perl-Net-SSLeay
+yum -y install perl-Time-Local
+yum -y install perl-Encode-Detect
+yum -y install perl-Data-Dumper
+yum -y install unzip
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```
+
+再执行命令。
+
+1. 登录并访问
+
+   ip:10000
